@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  mongo:
+    image: mongo:latest
+    container_name: "mongo"
+    ports:
+      - 27017:27017
+  users-services:
+    image: users-service
+    container_name: users-service
+    ports:
+      - 8181:8181
+    links:
+      - mongo
+  eureka-service:
+    image: eureka-service
+    container_name: "eureka-service"
+    ports:
+      - 8761:8761
+  api-gateway:
+    image: api-gateway
+    container_name: "api-gateway"
+    ports:
+      - 8999:8999
+     

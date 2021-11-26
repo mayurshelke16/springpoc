@@ -2,6 +2,6 @@ FROM java:8
 
 EXPOSE 8282
 
-ADD  target/Contacts-service.jar Contacts-service.jar
+ADD  target/contacts-service.jar contacts-service.jar
 
-ENTRYPOINT [ "java" ,"-jar","Contacts-service.jar"]
+ENTRYPOINT [ "java" ,"-jar","contacts-service.jar"]
